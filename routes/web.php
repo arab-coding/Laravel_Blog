@@ -14,13 +14,13 @@
     Route::get('/', function () {
         return view('welcome');
     });
-Route::get('/title', function () {
-    return view('title');
-});
-
-Route::get('/ali', function () {
-    return view('ali');
-});
+//Route::get('/title', function () {
+//    return view('title');
+//});
+//
+//Route::get('/ali', function () {
+//    return view('ali');
+//});
 //
 //    Route::get('/book',function(){
 //        return "welcome";
@@ -43,3 +43,5 @@ Route::get('/ali', function () {
 
 //    Route::resource('post','Posts');
     Route::get('post/{id}/{name}','posts@post');
+
+    Route::get('/category','Posts@category');

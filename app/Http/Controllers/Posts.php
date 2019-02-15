@@ -14,7 +14,11 @@ class Posts extends Controller
     }
 
 
+    public function category(){
+        $category = ['C++','Java','c#','C++','Java','c#'];
 
+        return view('category',compact('category'));
+    }
 
 
 
