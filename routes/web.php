@@ -14,6 +14,13 @@
     Route::get('/', function () {
         return view('welcome');
     });
+Route::get('/title', function () {
+    return view('title');
+});
+
+Route::get('/ali', function () {
+    return view('ali');
+});
 //
 //    Route::get('/book',function(){
 //        return "welcome";
