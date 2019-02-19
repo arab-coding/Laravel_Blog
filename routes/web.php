@@ -11,7 +11,9 @@
 |
 */
 
-    Route::get('/', function () {
+
+
+Route::get('/', function () {
         return view('welcome');
     });
 //Route::get('/title', function () {
@@ -42,6 +44,33 @@
 
 
 //    Route::resource('post','Posts');
-    Route::get('post/{id}/{name}','posts@post');
+//    Route::get('post/{id}/{name}','posts@post');
+//
+//    Route::get('/category','Posts@category');
 
-    Route::get('/category','Posts@category');
+//
+//    Route::get('/insert',function (){
+//
+//        DB:: insert('insert into posts(title,body) values (?,?)',['عنوان المقال الأول','محتوى المقال الأول ']);
+//    });
+
+
+//    Route::get('/read',function (){
+//      $result = DB::select('select * from posts where id = ?') ;
+////
+////      foreach ($result as $body){
+////          return $body->body;
+////      }
+//       return $result;
+//    });
+
+
+//Route::get('/update',function (){
+//   DB:: update('update posts set title = "تحديث المقال ٢" where id =?',[2]);
+//
+//});
+
+Route::get('/delete/{id}',function ($id){
+ $delete =  DB::delete('delete from posts where id = ?',[$id]);
+    return $delete;
+});
