@@ -70,7 +70,28 @@ Route::get('/', function () {
 //
 //});
 
-Route::get('/delete/{id}',function ($id){
- $delete =  DB::delete('delete from posts where id = ?',[$id]);
-    return $delete;
+//Route::get('/delete/{id}',function ($id){
+// $delete =  DB::delete('delete from posts where id = ?',[$id]);
+//    return $delete;
+//});
+
+
+
+
+use App\Post;
+
+
+
+
+Route::get('/read',function (){
+    $post = Post::find(2);
+    return $post->title;
+
+
+//   foreach ($post as $posts){
+//
+//       return $posts->body;
+//   }
+//   return $post;
+
 });
