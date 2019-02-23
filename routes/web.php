@@ -95,3 +95,16 @@ Route::get('/read',function (){
 //   return $post;
 
 });
+Route::get('/find',function (){
+
+    $find = Post::where('title','مقال رقم ٢')->orderBy('id','desc')->take(1)->get();
+    return $find;
+});
+
+Route::get('/insert',function (){
+
+    $post = new Post;
+    $post->title = 'المقال الجديد رقم 4';
+    $post->body = 'مقال رقم 4 ';
+    $post->save();
+});
