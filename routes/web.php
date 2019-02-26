@@ -95,16 +95,29 @@ Route::get('/read',function (){
 //   return $post;
 
 });
-Route::get('/find',function (){
+//Route::get('/find',function (){
+//
+//    $find = Post::where('title','مقال رقم ٢')->orderBy('id','desc')->take(1)->get();
+//    return $find;
+//});
+//
+//Route::get('/insert',function (){
+//
+//    $post = new Post;
+//    $post->title = 'المقال الجديد رقم 4';
+//    $post->body = 'مقال رقم 4 ';
+//    $post->save();
+//});
 
-    $find = Post::where('title','مقال رقم ٢')->orderBy('id','desc')->take(1)->get();
-    return $find;
-});
+//Route::get('/insert',function (){
+//    Post::create(['title'=>'مقال جديد بطريقة رقم ٢','body'=>'محتوى المقال الجديد ٢']);
+//});
+//
+//Route::get('update',function (){
+//   Post::where('id',2)->update(['title'=>'مقال جديد بطريقة رقم 22','body'=>'محتوى المقال الجديد 22']);
+//});
 
-Route::get('/insert',function (){
-
-    $post = new Post;
-    $post->title = 'المقال الجديد رقم 4';
-    $post->body = 'مقال رقم 4 ';
-    $post->save();
+Route::get('delete',function (){
+//   Post::destroy([2,3]);
+    Post::where('title','المقال الجديد رقم 4')->delete();
 });

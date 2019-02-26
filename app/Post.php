@@ -11,4 +11,6 @@ class Post extends Model
 
 //    protected $primaryKey = 'id';
 
+//      protected $fillable = ['title','body'];
+protected $guarded = ['body'];
 }
