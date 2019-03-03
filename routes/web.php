@@ -122,5 +122,8 @@ Route::get('/read',function (){
 //});
 
 Route::get('/post/{id}/user',function ($id){
-   return User::find($id)->post;
+   return User::find($id)->post_user;
+});
+Route::get('/user/{id}/post',function ($id){
+    return Post::find($id)->user->email;
 });
