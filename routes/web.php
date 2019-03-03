@@ -79,8 +79,7 @@ Route::get('/', function () {
 
 
 use App\Post;
-
-
+use App\User;
 
 
 Route::get('/read',function (){
@@ -117,7 +116,11 @@ Route::get('/read',function (){
 //   Post::where('id',2)->update(['title'=>'مقال جديد بطريقة رقم 22','body'=>'محتوى المقال الجديد 22']);
 //});
 
-Route::get('delete',function (){
-//   Post::destroy([2,3]);
-    Post::where('title','المقال الجديد رقم 4')->delete();
+//Route::get('delete',function (){
+////   Post::destroy([2,3]);
+//    Post::where('title','المقال الجديد رقم 4')->delete();
+//});
+
+Route::get('/post/{id}/user',function ($id){
+   return User::find($id)->post;
 });
