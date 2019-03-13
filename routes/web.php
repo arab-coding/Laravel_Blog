@@ -79,7 +79,7 @@ Route::get('/', function () {
 
 
 use App\Post;
-use App\User;
+
 
 
 Route::get('/read',function (){
@@ -120,10 +120,21 @@ Route::get('/read',function (){
 ////   Post::destroy([2,3]);
 //    Post::where('title','المقال الجديد رقم 4')->delete();
 //});
+//
+//Route::get('/post/{id}/user',function ($id){
+//   return User::find($id)->post_user;
+//});
+//Route::get('/user/{id}/post',function ($id){
+//    return Post::find($id)->user->email;
+//});
+use App\User;
 
 Route::get('/post/{id}/user',function ($id){
-   return User::find($id)->post_user;
-});
-Route::get('/user/{id}/post',function ($id){
-    return Post::find($id)->user->email;
+
+      $user = User::find($id)->post;
+        foreach ($user->post as $post){
+            echo $post->body . "<br>";
+            echo $post->title . "<br>";
+        }
+//      return $posts;
 });
